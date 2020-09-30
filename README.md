@@ -11,3 +11,11 @@ Finally the Face_Recognition.py file almost do same, but instead of detecting fa
 If the encodings are the same then person's name will pop up.
 
 ## Pre-Requisites Before running
+* First of all, Please change the path of DIRECTORY in Encoder.py file to your working directory path.
+* Install Cmake using pip install cmake.
+* Install Dlib using pip install dlib.
+* Install Face-Recognition using pip install face_recognition
+* Install OpenCV using pip install opencv-python
+* Install Pickle using pip install pickles
+
+## Dataset Creation
