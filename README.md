@@ -19,3 +19,8 @@ If the encodings are the same then person's name will pop up.
 * Install Pickle using pip install pickles
 
 ## Dataset Creation
+
+
+
+## Result
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/70112406/94747341-3a21b080-039c-11eb-8edd-fcd971083852.gif)
