@@ -1,3 +1,4 @@
+# Importing Modules
 import face_recognition
 import pickle
 import cv2
@@ -8,16 +9,16 @@ data = pickle.loads(open('Encodings.pkl','rb').read())
 print("Starting Video Stream...")
 cap = cv2.VideoCapture(0)
 
-# fourcc = cv2.VideoWriter_fourcc(*'XVID')
-# out = cv2.VideoWriter('Final.avi', fourcc, 5.0, (640, 480))
-
 while True:
     ret, frame = cap.read()
     color = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
-    face_locations = face_recognition.face_locations(color)  # model="cnn" (by default it's model="hog"
+# Detecting the Faces
+    face_locations = face_recognition.face_locations(color)  # model="cnn" (by default it's model="hog")
+# Converting into Encodings
     encodings = face_recognition.face_encodings(color,face_locations)
     names = []
     for encoding in encodings:
+# Comparing the Encodings to the saved Encodings
         matches = face_recognition.compare_faces(data['encodings'],encoding)
         name='Unknown'
 
@@ -35,14 +36,13 @@ while True:
             name = max(counts, key=counts.get)
             # update the list of names
         names.append(name)
-
+# Creating the box around the face and shows it's name
     for ((top, right, bottom, left), name) in zip(face_locations, names):
         cv2.rectangle(frame, (left, top), (right, bottom), (255, 255, 255), 2)
         cv2.putText(frame,name,(left,top-10),cv2.FONT_HERSHEY_SIMPLEX,0.75, (255, 255, 255), 2)
 
-        # out.write(frame)
-
     cv2.imshow('CAMERA', frame)
+# Press q to Quit
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 cap.release()
