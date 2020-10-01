@@ -26,7 +26,7 @@ If the encodings are the same then person's name will pop up.
 
 ## Order of files to be run
 * First you have to run `Encoder.py` file to create the Encodings.
-* Secondly you have to run `Face_Recognition` file to recognize the faces.
+* Secondly you have to run `Face_Recognition.py` file to recognize the faces.
 
 ## Result
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/70112406/94747341-3a21b080-039c-11eb-8edd-fcd971083852.gif)
